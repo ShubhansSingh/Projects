@@ -142,8 +142,6 @@ void huffman(char *arr)
             count[var-1]++;
     }
     sort(temp,count,t);
-    //for(i=0;i<t;i++)
-      //  printf("\t\t\t %c  %d\n",temp[i],count[i]);
     struct node *queue=NULL,*p,*q;
     for(i=0;i<t;i++)
         insertion(&queue,getnode(count[i],temp[i]));
@@ -153,9 +151,7 @@ void huffman(char *arr)
         q=extract_min(&queue);
         insertion(&queue,combine(p,q));
     }
-  //  printf("\n\t\t\t %d \n\n",queue->info);
     int ans[500],as=0;
-    //inorder(queue);
     printf("\n\t\t\tword  :  codes\n");
     codes(queue,ans,as);
 }
